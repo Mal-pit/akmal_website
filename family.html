@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Family</title>
+  <link rel="stylesheet" href="css/f.css">
+</head>
+<body>
+
+<audio id="bgm" src="audio/q.mp3" loop></audio>
+
+  <video autoplay muted loop id="bgVideo">
+    <source src="video/1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="content">
+    <header class="new-header">
+      <div class="header-glass">
+        <h1 class="header-title">𝓕𝓐𝓜𝓘𝓛𝓨</h1>
+      </div>
+    </header>
+
+    <nav>
+      <a href="index.html">ABOUT ME</a>
+      <a href="education.html">EDUCATION</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="family.html">FAMILY</a>
+      <a href="gallery.html">GALLERY</a>
+    </nav>
+
+    <center><h2>MY PARENT</h2></center>
+
+    <div class="parents-picture">
+      <img src="image/am.jpg" alt="My Parents">
+    </div>
+
+    <table class="info-table">
+      <tr><th>FATHER</th><td>YAAKUB BIN MAMAT</td></tr>
+      <tr><th>MOTHER</th><td>NORIZAN BINTI ISMAIL</td></tr>
+    </table>
+
+    <br>
+
+    <center><h2>MY SIBLINGS</h2></center>
+
+    <div class="family-gallery">
+      <img src="image/g1.jpg">
+      <img src="image/g3.jpg">
+      <img src="image/g2.jpg">
+      <img src="image/g4.jpg">
+      <img src="image/cucu.jpg">
+    </div>
+
+    <br>
+
+    <table class="siblings-table">
+      <tr><th>N0.</th><th>NAME</th></tr>
+      <tr><td>1</td><td>AZMAN SARIDI BIN YAAKUB</td></tr>
+      <tr><td>2</td><td>NORHANANI BINTI YAAKUB</td></tr>
+      <tr><td>3</td><td>AFENDI BIN YAAKUB</td></tr>
+      <tr><td>4</td><td>ASYIKIN BINTI YAAKUB</td></tr>
+      <tr><td>5</td><td>MOHD BADLI BIN YAAKUB</td></tr>
+      <tr><td>6</td><td>NORAZLIDA BINTI YAAKUB</td></tr>
+      <tr><td>7</td><td>NOR ZUHAIRAH BINTI YAAKUB</td></tr>
+      <tr><td>8</td><td>SARIFUDIN BIN YAAKUB</td></tr>
+      <tr><td>9</td><td>KHAIRUL NIZAM BIN YAAKUB</td></tr>
+      <tr><td>10</td><td>KHAIRUL IMRAN BIN YAAKUB</td></tr>
+      <tr><td>11</td><td>NUR ASIYAH BINTI YAAKUB</td></tr>
+      <tr><td>12</td><td>MUHAMAD AKMAL AMIRULLAH BIN YAAKUB</td></tr>
+    </table>
+
+<script>
+      function start(){
+      let splash = document.getElementById("splash");
+
+      splash.addEventListener("transitionend", () => {
+      document.getElementById("bgm").play();
+      splash.remove();
+      });
+
+  splash.classList.add("hide");
+}
+
+    document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", () => {
+      const music = document.getElementById("bgm");
+      music.play().catch(err => console.log("Autoplay blocked:", err));
+    }, { once: true });
+  });
+  </script>
+
+    <footer>
+      <p>&copy; 2025 Akmal. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

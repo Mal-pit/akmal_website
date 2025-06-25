@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Gallery</title>
+  <link rel="stylesheet" href="css/g.css">
+</head>
+<body>
+
+<audio id="bgm" src="audio/r.mp3" loop></audio>
+
+  <div class="content">
+    <div class="new-header">
+      <h1 class="header-title">𝓖𝓐𝓛𝓛𝓔𝓡𝓨</h1>
+      <p class="header-subtitle">█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█<br>
+█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█<br>
+█░░║║║╠─║─║─║║║║║╠─░░█<br>
+█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█<br>
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█<br>
+</p>
+    </div>
+
+    <nav>
+      <a href="index.html">ABOUT ME</a>
+      <a href="education.html">EDUCATION</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="family.html">FAMILY</a>
+      <a href="gallery.html">GALLERY</a>
+    </nav>
+
+    <section class="media-gallery">
+      <h2>YaAiRiFa</h2>
+      <div class="photo-slider">
+        <button class="slide-btn prev">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="slide-track">
+            <img src="image/1.jpg" alt="Photo 1">
+            <img src="image/2.jpg" alt="Photo 2">
+            <img src="image/3.jpg" alt="Photo 3">
+            <img src="image/5.jpg" alt="Photo 5">
+            <img src="image/6.jpg" alt="Photo 6">
+            <img src="image/7.jpg" alt="Photo 7">
+            <img src="image/8.jpg" alt="Photo 8">
+            <img src="image/9.jpg" alt="Photo 9">
+          </div>
+        </div>
+        <button class="slide-btn next">&#10095;</button>
+      </div>
+    </section>
+
+
+      <h2 style="text-align: center;">MY CLASSMATE</h2>
+
+      <br>
+      <br>
+
+    <div class="family-gallery">
+      <img src="image/4.jpg">
+    </div>
+
+     <br>
+
+    <section class="media-videos">
+      <h2>MEMORIES</h2>
+      <div class="video-container">
+        <video controls src="video/v4.mp4"></video>
+        <video controls src="video/v2.mov"></video>
+        <video controls src="video/v5.mov"></video>
+      </div>
+    </section>
+
+    <section class="media-videos">
+
+      <h2>FAV MUSIC</h2>
+      <div class="video-container">
+        <audio controls src="audio/lana2.mp3">
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Akmal. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const track = document.querySelector('.slide-track');
+    const next = document.querySelector('.slide-btn.next');
+    const prev = document.querySelector('.slide-btn.prev');
+    let scrollAmount = 0;
+    const step = 320;
+
+    next.addEventListener('click', () => {
+      scrollAmount += step;
+      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prev.addEventListener('click', () => {
+      scrollAmount -= step;
+      if (scrollAmount < 0) scrollAmount = 0;
+      track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
+  <script>
+      function start(){
+      let splash = document.getElementById("splash");
+
+      splash.addEventListener("transitionend", () => {
+      document.getElementById("bgm").play();
+      splash.remove();
+      });
+
+  splash.classList.add("hide");
+}
+
+    document.addEventListener("DOMContentLoaded", () => {
+    document.body.addEventListener("click", () => {
+      const music = document.getElementById("bgm");
+      music.play().catch(err => console.log("Autoplay blocked:", err));
+    }, { once: true });
+  });
+  </script>
+
+  
+</body>
+</html>
